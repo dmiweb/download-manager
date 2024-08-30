@@ -82,9 +82,11 @@ export default class WidgetDownloadFiles {
       fetch(urlElement.href)
         .then((response) => response.blob())
         .then((blob) => {
+          const url = URL.createObjectURL(blob);
+          
           const link = document.createElement("a");
           link.style.display = "none";
-          link.href = blob;
+          link.href = url;
           link.download = `${fileName.textContent}.pdf`;
           document.body.appendChild(link);
           link.click();
@@ -93,6 +95,8 @@ export default class WidgetDownloadFiles {
           const counter = +counterElem.textContent + blob.size / 1000000;
 
           counterElem.textContent = counter.toFixed(1);
+
+          setTimeout(() => URL.revokeObjectURL(url), 0);
         });
     }
   }

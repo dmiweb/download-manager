@@ -1,0 +1,48 @@
+.widget-download-files {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.widget-download-files__downloaded-title {
+  margin-left: 10px;
+}
+
+.files-container {
+  padding: 15px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  list-style: none;
+}
+
+.files-container__title {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.file {
+  display: flex;
+  padding: 8px 0;
+}
+
+.file__name {
+  width: 44%;
+}
+
+.file__size {
+  width: 28%;
+}
+
+.file__data {
+  width: 28%;
+  text-align: right;
+}
+
+.data__url {
+  margin-right: 40px;
+  text-decoration-color: #696969;
+  color: #696969;
+}
+
+.data__url:active {
+  color: #000000;
+}
